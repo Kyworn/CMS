@@ -1,0 +1,18 @@
+body {
+    font-family: 'Prompt', sans-serif;
+}
+.contenu {
+  display: flex;
+  flex-direction: column;
+  max-width: 35em;
+  margin: 0px auto;
+  margin-top: 8%;
+}
+
+footer {
+  text-align: center;
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

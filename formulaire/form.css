@@ -1,0 +1,26 @@
+.titre {
+    text-align: center;
+    font-size: 3em;
+}
+
+.titre img {
+    width: 5%;
+}
+
+#form {
+    margin: 0 auto;
+    max-width: 75em;
+    margin-left: 35%;
+}
+
+#buttonConIns {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+#Redirect {
+    margin: 0 auto;
+    max-width: 50em;
+    text-align: center;
+}

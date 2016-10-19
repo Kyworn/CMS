@@ -1,0 +1,9 @@
+#text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 50em;
+  margin: 0px auto;
+  margin-top: 5em;
+  text-align: center;
+}

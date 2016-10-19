@@ -1,0 +1,18 @@
+body {
+    font-family: 'Prompt', sans-serif;
+}
+
+h1:nth-of-type(1) {
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+#showarticle {
+    margin-bottom: 3em;
+}
+
+.search {
+    max-width: 50em;
+    margin: 0px auto;
+    margin-top: 10em;
+}
