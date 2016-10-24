@@ -54,7 +54,7 @@
       <a href="../index.php"><img src="../img/logo.png" /></a>
   </div>
   <div id="form">
-      <h5>Regarde si ton pseudo est déjà prit !</h5>
+      <h5>Regarde si ton pseudo est déjà pris !</h5>
       <form action="insertUsers.php" method="post">
           <div class="row">
               <div class="input-field col s6">
