@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <link rel="stylesheet" href="admin.css" media="screen" title="no title">
+    <script src="//cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
     <title>Page d'Administration</title>
   </head>
   <body>
@@ -19,11 +20,17 @@
 
   <div id="text">
   <form action="insert.php" method="post">
-  <h5>Titre de l&apos;article :</h5>
-  <input type="text" name="title" required="required" /><br /><br />
-  <h5>Contenu de l&apos;article :</h5>
-  <input style="" type="text" name="content"required="required" /><br/><br />
-  <input class="btn waves-effect waves-light" class="material-icons right" type="submit" value=" Envoyé  " name="submit"/><a><br />
+  <textarea name="title" id="editor2" rows="10" cols="80">
+             </textarea>
+             <script>
+                 CKEDITOR.replace( "editor2" );
+             </script>
+  <textarea name="content" id="editor1" rows="10" cols="80">
+             </textarea>
+             <script>
+                 CKEDITOR.replace( "editor1" );
+             </script>
+  <input class="btn waves-effect waves-light" class="material-icons right" type="submit" value=" Envoyé" name="submit"/><a><br />
   </form>
   </div>
 ';
