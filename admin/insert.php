@@ -2,8 +2,8 @@
 session_start();
 if(isset($_POST["submit"])){
 include '../connectsql/pdoconnect.php';
-$sql = "INSERT INTO posts (title, content, pseudo, timedate)
-VALUES ('".$_POST["title"]."','".$_POST["content"]."','".$_SESSION["pseudo"]."','".$_SESSION["timedate"]."')";
+$sql = "INSERT INTO posts (title, content, pseudo)
+VALUES ('".$_POST["title"]."','".$_POST["content"]."','".$_SESSION["pseudo"]."')";
 if ($pdo->query($sql)) {
 echo "Article Rajouté";
 }

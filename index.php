@@ -17,12 +17,12 @@ session_start();
     try
     {
         include 'connectsql/pdoconnect.php';
-    $reponse = $pdo->query('SELECT title, content, pseudo, timedate FROM posts');
+    $reponse = $pdo->query('SELECT title, content, pseudo FROM posts');
 
     while ($donnees = $reponse->fetch())
     {
         echo "</tr>";
-        echo "<h1> $donnees[title] </h1> $donnees[timedate]";
+        echo "<h1> $donnees[title] </h1>";
         echo "<p> $donnees[content] </p>";
         echo "<p>Auteur : $donnees[pseudo] </p>";
 
