@@ -15,6 +15,7 @@
     <?php
     session_start();
     if(isset($_POST['connexion'])) {
+      include '../connectsql/pdoconnect.php';
       include '../connectsql/config.php';
         if(empty($_POST['pseudo'])) {
             echo "Le champ Pseudo est vide.";
@@ -22,12 +23,12 @@
             if(empty($_POST['mot_de_passe'])) {
                 echo '<h5 style="text-align:center;">Le champ Mot de passe est vide.</h5>';
             } else {
-                if(!$mysqli){
+                if(!$pdo){
                     echo "Erreur de connexion à la base de données.";
                 }
                  else {
-                    $Requete = mysqli_query($mysqli,"SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".sha1($MotDePasse)."'");
-                    if(mysqli_num_rows($Requete) == 0) {
+                    $Requete = $pdo->query("SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".sha1($MotDePasse)."'");
+                    if (FALSE === ($row = $Requete->fetch())) {
                         echo '<h5 style="text-align:center;">Il y a une erreur quelque part !</h5>';
                     } else {
                         $_SESSION['pseudo'] = $Pseudo;

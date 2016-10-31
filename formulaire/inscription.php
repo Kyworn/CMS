@@ -1,3 +1,7 @@
+<?php
+session_start();
+include '../connectsql/pdoconnect.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +14,6 @@
 
 </head>
 <body>
-  <?php
-  session_start();
-  include '../connectsql/pdoconnect.php';
-
-  ?>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   <script>
