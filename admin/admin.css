@@ -4,5 +4,13 @@
   max-width: 50em;
   margin: 0px auto;
   margin-top: 5em;
-  text-align: center
+  text-align: center;
+  margin-bottom: 5em;
+}
+.edit h3 {
+  text-align: center;
+  margin-top: 3em;
+}
+.waves-input-wrapper {
+  margin-top: 2em;
 }

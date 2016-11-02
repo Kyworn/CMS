@@ -1,40 +1,60 @@
 <head>
-  <link rel="stylesheet" href="headerindex.css" media="screen" title="no title">
   <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 </head>
-<?php
-echo '
-<div id="title">
-<img src="img/logo.png"/>
-  <a href="index.php">  <h1>
-      BlogName
-    </h1>
-  </a>
-  </div>
-<header>
-<div id="header" class="container">
-<nav>
-          <ul>
-              <a href="index.php">
-                  <li class="animated fadeIn">Accueil</li>
-              </a>' ?>
 <?php if (isset($_SESSION['pseudo'])) {
     echo '
-<a href="admin/admin.php"><li class="animated fadeIn">Page d&apos;Administration</li></a>
-<a href="formulaire/logout.php">
-  <li class="animated fadeIn">Déconnection</li>
-</a>';
+    <nav>
+    <div style="background-color:white;" class="nav-wrapper">
+      <a style="color:black; padding-left:1em;" href="index.php" class="brand-logo">BlogName</a>
+      <a style="color:black;" href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a style="color:black;" href="index.php">Accueil</a></li>';
+        if(isset($_SESSION['status']) && $_SESSION['status'] == 'Administrateur'){
+          echo '<li><a style="color:black;" href="admin/admin.php">Page d&apos;administration</a></li>';
+        }
+        echo
+        '<li><a style="color:black;" href="formulaire/logout.php">Déconnexion</a></li>
+        <li><form action="search.php" method="post"><input type="text" class="champ" name="search" placeholder=" Recherche par mots clés "/></form></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+        <li><a href="index.php">Accueil</a></li>';
+        if(isset($_SESSION['status']) && $_SESSION['status'] == 'Administrateur'){
+          echo '<li><a style="color:black;" href="admin/admin.php">Page d&apos;administration</a></li>';
+        }
+        echo' <li><a href="formulaire/logout.php">Déconnexion</a></li>
+        <li><form action="search.php" method="post"><input type="text" class="champ" name="search" placeholder=" Recherche par mots clés "/></form></li>
+      </ul>
+    </div>
+    </nav>
+    ';
 } else {
-    echo'<a href="formulaire/connexion.php">
-    <li class="animated fadeIn">Login</li>
-</a>';
+    echo'<nav>
+    <div style="background-color:white;" class="nav-wrapper">
+      <a style="color:black; padding-left:1em;" href="index.php" class="brand-logo">BlogName</a>
+      <a style="color:black;" href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a style="color:black;" href="index.php">Accueil</a></li>
+        <li><a style="color:black;" href="formulaire/connexion.php">Connexion/Inscription</a></li>
+        <li><form action="search.php" method="post"><input type="text" class="champ" name="search" placeholder=" Recherche par mots clés "/></form></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+        <li><a href="index.php">Accueil</a></li>
+        <li><a href="formulaire/connexion.php">Connexion/Inscription</a></li>
+        <li><form action="search.php" method="post"><input type="text" class="champ" name="search" placeholder=" Recherche par mots clés "/></form></li>
+
+      </ul>
+    </div>
+    </nav>';
 }
-echo '    <form action="search.php" method="post">
-      <input type="text" class="champ" name="search" placeholder=" Recherche par mots clés "/>
-    </form>
-  </ul>
-</nav>
-</div>
-</header>'
+
 ?>
+
+<?php echo '
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<script>
+$(".button-collapse").sideNav();
+</script>'; ?>

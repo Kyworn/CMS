@@ -8,6 +8,8 @@ session_start();
     <meta charset="utf-8">
     <link rel="stylesheet" href="index.css" media="screen" title="no title">
     <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
     <title>Accueil</title>
   </head>
   <body>
@@ -17,16 +19,13 @@ session_start();
     try
     {
         include 'connectsql/pdoconnect.php';
-    $reponse = $pdo->query('SELECT title, content, pseudo FROM posts');
+    $reponse = $pdo->query('SELECT title, content, pseudo, timedate, grade FROM posts');
 
     while ($donnees = $reponse->fetch())
     {
-        echo "</tr>";
-        echo "<h1> $donnees[title] </h1>";
+        echo "<span><h3> $donnees[title] </h3><p>$donnees[timedate]</p></span>";
         echo "<p> $donnees[content] </p>";
-        echo "<p>Auteur : $donnees[pseudo] </p>";
-
-        echo "</tr>";
+        echo "<p>Auteur : $donnees[pseudo]  </p>";
     }
     $reponse->closeCursor();
     }

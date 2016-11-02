@@ -3,7 +3,7 @@ if(isset($_POST["submit"])){
 include '../connectsql/pdoconnect.php';
 
 $sql = "INSERT INTO users (username, password, status)
-VALUES ('".$_POST["username"]."','".sha1($_POST["password"])."','lecteur')";
+VALUES ('".$_POST["username"]."','".sha1($_POST["password"])."','Lecteur')";
 if ($pdo->query($sql)) {
 echo "Vous êtes maintenant enregistré";
 }

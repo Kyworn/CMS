@@ -16,7 +16,6 @@
     session_start();
     if(isset($_POST['connexion'])) {
       include '../connectsql/pdoconnect.php';
-      include '../connectsql/config.php';
         if(empty($_POST['pseudo'])) {
             echo "Le champ Pseudo est vide.";
         } else {
@@ -27,13 +26,13 @@
                     echo "Erreur de connexion à la base de données.";
                 }
                  else {
-                    $Requete = $pdo->query("SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".sha1($MotDePasse)."'");
+                    $Requete = $pdo->query("SELECT * FROM users WHERE username = '".$_POST['pseudo']."' AND password = '".sha1($_POST['mot_de_passe'])."'");
                     if (FALSE === ($row = $Requete->fetch())) {
                         echo '<h5 style="text-align:center;">Il y a une erreur quelque part !</h5>';
                     } else {
-                        $_SESSION['pseudo'] = $Pseudo;
-                        echo 'test
-                        ';
+                        $_SESSION['status'] = $row['status'];
+                        $_SESSION['pseudo'] = $_POST['pseudo'];
+                        echo '';
                     }
                 }
             }
@@ -62,10 +61,10 @@
      ?>
 <?php
  if(isset($_SESSION['pseudo']))  {
-          echo '<div id="Redirect"></br>Salut '.$_SESSION['pseudo'].'</br><p>Vous allez être redirigé dans 3 seconde sur la page d&apos;
+          echo '<div id="Redirect"></br>Salut '.$_SESSION['pseudo'].' connecté en tant avec le status de '.$_SESSION['status'].'</br><p>Vous allez être redirigé dans 3 seconde sur la page d&apos;
           Accueil,</br> si vous ne voulez pas vous pouvez vous déconnecter !</br> Attention vous avez 3 secondes !</p></br></br>
           <a class="waves-effect waves-light btn" href="logout.php">Logout</a> </div>';
-          header( "location:../index.php", true, 303);
+          header( "Refresh:3, url=../index.php", true, 303);
 
       }
       else {
