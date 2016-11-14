@@ -4,7 +4,9 @@
 
 
 </head>
-<?php if (isset($_SESSION['pseudo'])) {
+<?php
+$adminbutton = '<li><a style="color:black;" href="admin/admin.php">Page d&apos;administration</a></li>';
+if (isset($_SESSION['pseudo'])) {
     echo '
     <nav>
     <div style="background-color:white;" class="nav-wrapper">
@@ -13,7 +15,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a style="color:black;" href="index.php">Accueil</a></li>';
         if(isset($_SESSION['status']) && $_SESSION['status'] == 'Administrateur'){
-          echo '<li><a style="color:black;" href="admin/admin.php">Page d&apos;administration</a></li>';
+          echo $adminbutton;
         }
         echo
         '<li><a style="color:black;" href="formulaire/logout.php">Déconnexion</a></li>
@@ -22,7 +24,7 @@
         <ul class="side-nav" id="mobile-demo">
         <li><a href="index.php">Accueil</a></li>';
         if(isset($_SESSION['status']) && $_SESSION['status'] == 'Administrateur'){
-          echo '<li><a style="color:black;" href="admin/admin.php">Page d&apos;administration</a></li>';
+          echo $adminbutton;
         }
         echo' <li><a href="formulaire/logout.php">Déconnexion</a></li>
         <li><form action="search.php" method="post"><input type="text" class="champ" name="search" placeholder=" Recherche par mots clés "/></form></li>
