@@ -10,7 +10,7 @@
     <script>tinymce.init({
   selector: 'textarea',
   height:'10em' ,
-  width:'50em' ,
+  width:'40em' ,
   language : 'en',
   plugins: [
         "advlist autolink lists link image charmap print preview anchor",
@@ -30,8 +30,8 @@
     include 'connectsql/pdoconnect.php';
     if(isset($_SESSION['pseudo']))  {
       echo '
-        <form action="insertcom.php" method="post">
-          <h4>Contenu du commentaire</h4>
+        <form action="" method="post">
+          <h5>Contenu du commentaire</h5><p>255 caractère</p>
           <br>
           <textarea name="commentaire">
           </textarea>
@@ -47,7 +47,19 @@
 
 
     ?>
+    <?php
+    if(isset($_POST["submit"])){
+    include 'connectsql/pdoconnect.php';
 
+    $sql =   "INSERT INTO commentaires (id_billet, auteur, commentaire)
+    VALUES ('".$_GET['article']."','".$_SESSION["pseudo"]."','".$_POST["commentaire"]."')";
+    if ($pdo->query($sql)) {
+    }
+    else{
+    echo "Les donnés n'ont pas été ajoutés.";
+    }
+    }
+    ?>
 
    </form>
   </body>

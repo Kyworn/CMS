@@ -13,7 +13,6 @@
 
 <?php
 session_start();
-// Connexion à la base de données
 try
 {
   include 'connectsql/pdoconnect.php';
@@ -23,9 +22,8 @@ catch(Exception $e)
         die('Erreur : '.$e->getMessage());
 }
 
-// Récupération du billet
 $reponse = $pdo->prepare('SELECT id, title, content, pseudo, DATE_FORMAT(timedate, \'%d/%m/%Y à %H:%i\') AS timedate FROM posts WHERE id = ?');
-$reponse->execute(array($_GET['billet']));
+$reponse->execute(array($_GET['article']));
 $donnees = $reponse->fetch();
 ?>
 <?php include  'headerindex.php';  ?>
@@ -35,10 +33,11 @@ $donnees = $reponse->fetch();
 
 <div class="news">
 
-        <?php echo ($donnees['title']); ?>
-        Le <?php echo $donnees['timedate']; ?>
-
-
+      <h2><?php echo ($donnees['title']); ?></h2>
+       Le <?php echo $donnees['timedate']; ?>
+       <br>
+       <br>
+       <br>
     <p>
     <?php
     echo ($donnees['content']);
@@ -46,12 +45,13 @@ $donnees = $reponse->fetch();
     </p>
 </div>
 
-<h4>Commentaires</h4>
+<h5>Commentaires</h5>
+
 
 <?php
 $reponse->closeCursor();
 $reponse = $pdo->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %H:%i\') AS date_commentaire_fr FROM commentaires WHERE id_billet = ? ORDER BY date_commentaire');
-$reponse->execute(array($_GET['billet']));
+$reponse->execute(array($_GET['article']));
 
 while ($donnees = $reponse->fetch())
 {
@@ -59,7 +59,7 @@ while ($donnees = $reponse->fetch())
 <p><strong><?php echo ($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?></p>
 <p><?php echo ($donnees['commentaire']); ?></p>
 <?php
-} // Fin de la boucle des commentaires
+}
 $reponse->closeCursor();
 ?>
 <?php include 'newcom.php';

@@ -19,7 +19,7 @@ session_start();
     try
     {
         include 'connectsql/pdoconnect.php';
-    $reponse = $pdo->query('SELECT id, title, content, pseudo, timedate FROM posts');
+    $reponse = $pdo->query('SELECT id, title, content, pseudo, timedate FROM posts ORDER BY timedate DESC');
 
     while ($donnees = $reponse->fetch())
     {
@@ -27,7 +27,7 @@ session_start();
         echo "<p> $donnees[content] </p>";
         echo "<p>Auteur : $donnees[pseudo]  </p>";
         ?>
-        <a href="article.php?billet=<?php echo $donnees['id']; ?>">Commentaires</a>
+        <a href="article.php?article=<?php echo $donnees['id']; ?>">Commentaires</a>
         <?php
     }
     $reponse->closeCursor();
