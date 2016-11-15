@@ -18,16 +18,21 @@
 
 
     $sUsers = "SELECT * FROM users";
-    $sRseultUsers = $pdo->query($sUsers)->fetchAll();
+    $rReseultUsers = $pdo->query($sUsers)->fetchAll();
+
+    $sComment = "SELECT * FROM commentaires";
+    $rReseultComment = $pdo->query($sComment)->fetchAll();
 
     session_start();
     if(isset($_SESSION['status']))  {
       if($_SESSION['status']  == 'Administrateur'){
         include 'headeradmin.php';
-        echo('<div id="text"><div id="postNumber"><i class="material-icons" style="font-size:6em;">insert_chart</i><p>Nombre d&apos;article : ');
+        echo('<div id="text"><div id="postNumber"><i class="material-icons" style="font-size:6em;"><a href="articlechange.php">insert_chart</a></i><p>Nombre d&apos;article : ');
         echo count($rResultPosts);
-        echo('</p></div><br> <div id="postUsers"><i class="material-icons" style="font-size:6em;">person_pin</i><p>Nombre d&apos;utilisateur : ');
-        echo count($sRseultUsers);
+        echo('</p></div><br> <div id="postComment"><i class="material-icons" style="font-size:6em;"><a href="commentchange.php">comment</a></i><p>Nombre de commentaire : ');
+        echo count($rReseultComment);
+        echo('</p></div><br> <div id="postUsers"><i class="material-icons" style="font-size:6em;"><a href="changeuser.php">person_pin</a></i><p>Nombre d&apos;utilisateur : ');
+        echo count($rReseultUsers);
         echo('</p></div></div>');
         }
         else {

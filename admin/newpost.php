@@ -37,8 +37,7 @@
       <div id="text">
         <form action="insert.php" method="post">
         <div class="edit"><h1>Titre de l&apos;article </h1></div>
-          <textarea name="title">
-          </textarea>
+        <input style="text-align:center;" placeholder="Titre de l&apos;article" id="first_name" type="text" name="title" class="validate">
           <div class="edit"><h3>Contenu de l&apos;article</h3></div>
           <br>
           <textarea name="content">

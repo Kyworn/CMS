@@ -6,24 +6,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-    <script>tinymce.init({
-  selector: 'textarea',
-  height:'10em' ,
-  width:'40em' ,
-  language : 'en',
-  plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen",
-        "insertdatetime media table contextmenu paste imagetools"
-    ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-  imagetools_cors_hosts: ['www.tinymce.com', 'codepen.io'],
-  content_css: [
-    '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
-    '//www.tinymce.com/css/codepen.min.css'
-  ]
-});</script>
   </head>
   <body>
     <?php
@@ -31,10 +13,10 @@
     if(isset($_SESSION['pseudo']))  {
       echo '
         <form action="" method="post">
-          <h5>Contenu du commentaire</h5><p>255 caractère</p>
+          <h5>Contenu du commentaire</h5><p>255 caractères</p>
           <br>
-          <textarea name="commentaire">
-          </textarea>
+          <textarea id="icon_prefix2" name="commentaire" class="materialize-textarea"></textarea>
+
           <input class="btn waves-effect waves-light" class="material-icons right" type="submit" value="Envoyé" name="submit"/>
 
         </form>

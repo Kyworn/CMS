@@ -61,7 +61,7 @@
      ?>
 <?php
  if(isset($_SESSION['pseudo']))  {
-          echo '<div id="Redirect"></br>Salut '.$_SESSION['pseudo'].' connecté en tant avec le status de '.$_SESSION['status'].'</br><p>Vous allez être redirigé dans 3 seconde sur la page d&apos;
+          echo '<div id="Redirect"></br>Salut '.$_SESSION['pseudo'].' vous êtes connecté en tant que '.$_SESSION['status'].'</br><p>Vous allez être redirigé dans 3 seconde sur la page d&apos;
           Accueil,</br> si vous ne voulez pas vous pouvez vous déconnecter !</br> Attention vous avez 3 secondes !</p></br></br>
           <a class="waves-effect waves-light btn" href="logout.php">Logout</a> </div>';
           header( "Refresh:3, url=../index.php", true, 303);
