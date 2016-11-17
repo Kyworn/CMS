@@ -5,10 +5,10 @@ include '../connectsql/pdoconnect.php';
 $sql =   "INSERT INTO posts (title, content, pseudo)
 VALUES ('".$_POST["title"]."','".$_POST["content"]."','".$_SESSION["pseudo"]."')";
 if ($pdo->query($sql)) {
-echo "Article Rajouté";
+echo "<script language='javascript' type='text/javascript'>alert('Article ajouté!')</script>";
+echo "<script language='javascript' type='text/javascript'>window.open('admin.php','_self')</script>";
 }
 else{
-echo "Les donnés n'ont pas été ajoutés.";
 }
 }
 header( "Refresh:3; url=admin.php", true, 303);
