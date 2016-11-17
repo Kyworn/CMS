@@ -11,6 +11,8 @@
     include 'headeradmin.php'; ?>
     <?php
 	include('../connectsql/pdoconnect.php');
+  if(isset($_SESSION['status']))  {
+    if($_SESSION['status']  == 'Administrateur'){
 	$id=$_GET['id'];
 	$result = $pdo->prepare("SELECT * FROM users WHERE uid= :userid");
 	$result->bindParam(':userid', $id);
@@ -29,6 +31,8 @@ Username<br>
 </form>
 <?php
 	}
+}
+}
 ?>
 </div>
   </body>

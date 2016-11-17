@@ -13,6 +13,8 @@
     <?php
     try {
       include('../connectsql/pdoconnect.php');
+      if(isset($_SESSION['status']))  {
+        if($_SESSION['status']  == 'Administrateur'){
       $reponse = $pdo->query('SELECT uid, username, status FROM users');
       echo "<table><tr><td>Username</td><td>Status</td><td></td><td></td>";
       while($donnees = $reponse->fetch())
@@ -24,12 +26,15 @@
 ?>
 <?php
 }
-$reponse->closeCursor();
+}
+}
 }
 catch(Exception $e)
 {
     die('Erreur : '.$e->getMessage());
 }
+
+
 ?>
 </ol>
 </table>

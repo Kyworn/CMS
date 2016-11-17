@@ -17,6 +17,8 @@
 
         try {
           include('../connectsql/pdoconnect.php');
+          if(isset($_SESSION['status']))  {
+            if($_SESSION['status']  == 'Administrateur'){
           $reponse = $pdo->query('SELECT idb, auteur, commentaire FROM commentaires ORDER BY idb  ');
           echo "<table><tr><td>Titre</td><td>Aperçu du contenu</td><td>Date</td><td></td>";
           while($donnees = $reponse->fetch())
@@ -30,7 +32,8 @@
 
 <?php
 }
-$reponse->closeCursor();
+}
+}
 }
 catch(Exception $e)
 {

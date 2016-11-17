@@ -13,6 +13,8 @@
     <?php
     try {
       include('../connectsql/pdoconnect.php');
+      if(isset($_SESSION['status']))  {
+        if($_SESSION['status']  == 'Administrateur'){
       $reponse = $pdo->query('SELECT id, title, DATE_FORMAT(timedate, \'%d/%m/%Y  %H:%i\') AS timedate, SUBSTRING(content,1,200) AS content, SUBSTRING(title,1,50) AS title FROM posts ORDER BY timedate DESC');
       echo "<table><tr><td>Titre</td><td>Aperçu du contenu</td><td>Date</td><td></td>";
       while($donnees = $reponse->fetch())
@@ -25,7 +27,8 @@
 ?>
 <?php
 }
-$reponse->closeCursor();
+}
+}
 }
 catch(Exception $e)
 {
