@@ -13,7 +13,8 @@ session_start();
     <title>Accueil</title>
   </head>
   <body>
-      <?php include  'headerindex.php';  ?>
+      <?php include  'headerindex.php';
+      include 'info.php';?>
   <div class="contenu">
     <?php
     try
@@ -43,6 +44,6 @@ session_start();
     </div>
 <br>
 <br>
-  <footer class="footer">Footer Blogname</footer>
+  <footer class="footer"><?php echo $blogname ;?></footer>
   </body>
 </html>

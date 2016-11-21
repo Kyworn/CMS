@@ -22,7 +22,7 @@
           echo "<tr><td>".$donnees['title']."</br></td>";
           echo "<td>".$donnees['content']."</td>";
           echo "<td>".$donnees['timedate']."</td>";
-          echo "<td><a href='.php?id=".$donnees['id']."'>Editer</a></td>";
+  //        echo "<td><a href='.php?id=".$donnees['id']."'>Editer</a></td>";
           echo "<td><a href='deletearticle.php?id=".$donnees['id']."'>x</a></td><tr>";
 ?>
 <?php

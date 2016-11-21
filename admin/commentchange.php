@@ -19,14 +19,14 @@
           include('../connectsql/pdoconnect.php');
           if(isset($_SESSION['status']))  {
             if($_SESSION['status']  == 'Administrateur'){
-          $reponse = $pdo->query('SELECT idb, auteur, commentaire FROM commentaires ORDER BY idb  ');
+          $reponse = $pdo->query('SELECT id, auteur, commentaire, date_commentaire FROM commentaires ORDER BY date_commentaire DESC ');
           echo "<table><tr><td>Titre</td><td>Aperçu du contenu</td><td>Date</td><td></td>";
           while($donnees = $reponse->fetch())
             {
               echo "<tr><td>".$donnees['auteur']."</br></td>";
               echo "<td>".$donnees['commentaire']."</td>";
-              echo "<td><a href='.php?id=".$donnees['idb']."'>Editer</a></td>";
-              echo "<td><a href='deletecomment.php?id=".$donnees['idb']."'>x</a></td><tr>";
+              echo "<td>".$donnees['date_commentaire'] ;
+              echo "<td><a href='deletecomment.php?id=".$donnees['id']."'>x</a></td><tr>";
 ?>
 
 

@@ -4,14 +4,12 @@
     <meta charset="utf-8">
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-
   </head>
   <body>
-
+ <?php include '../info.php'; ?>
   </body>
 </html>
 <?php
@@ -19,7 +17,7 @@ if(isset($_SESSION['pseudo']))  {
   if($_SESSION['status']  == 'Administrateur'){
     echo ' <nav>
 <div style="background-color:black;" class="nav-wrapper">
-  <a href="admin.php" class="brand-logo">Cthulhu</a>
+  <a href="admin.php" class="brand-logo">'; echo $blogname; echo'</a>
   <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
   <ul class="right hide-on-med-and-down">
     <li><a href="../index.php">Accueil</a></li>

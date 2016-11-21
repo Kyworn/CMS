@@ -1,0 +1,3 @@
+<?php
+$blogname = 'Cthulhu';
+ ?>
