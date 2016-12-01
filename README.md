@@ -7,3 +7,4 @@ CTHULHU est un cms gratuit, facile d'utilisation pour les débutants ! Il utilis
   - Modification/Suppresion D'article (à finir).
   - Modification(Grade)/Suppresion d'utilisateur.
   - Suppresion de commentaire.
+ 
