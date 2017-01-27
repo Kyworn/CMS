@@ -20,7 +20,7 @@
 	for($i=0; $row = $result->fetch(); $i++){
 ?>
 <div class="articleChange">
-<form action="useredit.php" method="POST">
+<form action="user.update.php" method="POST">
 <input type="hidden" name="uid" value="<?php echo $id; ?>" />
 
 Username<br>

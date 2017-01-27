@@ -7,12 +7,12 @@ h1:nth-of-type(1) {
     margin-bottom: 5em;
 }
 
+/*noinspection CssUnusedSymbol*/
 #showarticle {
     margin-bottom: 3em;
 }
 
 .search {
     max-width: 50em;
-    margin: 0px auto;
-    margin-top: 10em;
+    margin: 10em auto 0;
 }

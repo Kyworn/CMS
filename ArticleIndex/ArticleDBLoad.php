@@ -1,5 +1,6 @@
 <?php
-class BlogDBLoad implements IBlogLoad{
+
+class ArticleDBLoad implements IArticleLoad {
     public $dbname= [],
     $pdo;
 
@@ -7,14 +8,14 @@ class BlogDBLoad implements IBlogLoad{
     {
         $this->pdo  =  new PDO('mysql:host='.$host.';dbname='.$db.';charset=utf8',$user , $pass);
     }
-    function load(String $path):array
+    function loadArticle(String $path):array
     {
         $select = $this->pdo->query('SELECT * FROM posts');
         while($data = $select->fetch(PDO::FETCH_ASSOC)){
              array_push($this->dbname, $data);
         }
         $auteurs = array_map(function($auteur){
-            return new Author($auteur{'id'}, $auteur{'pseudo'});
+            return new Auteur($auteur{'id'}, $auteur{'pseudo'});
         },$this->dbname);
         $articles = array_map(function($article)use($auteurs){
             $idAuteurs = $article{'id'};
@@ -32,7 +33,3 @@ class BlogDBLoad implements IBlogLoad{
         return $articles;
     }
 }
-interface IBlogLoad{
-    function load(String $path):array;
-}
-?>

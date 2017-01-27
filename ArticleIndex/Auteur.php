@@ -1,5 +1,5 @@
 <?
-class Author
+class Auteur
 {
     public $id;
     public $pseudo;
@@ -9,9 +9,8 @@ class Author
         $this->id = $id;
         $this->pseudo = $pseudo;
     }
-    function getShortName(): String
+    function getFirstCharToller(): String
     {
         return ucfirst($this->pseudo) ;
     }
 }
-?>

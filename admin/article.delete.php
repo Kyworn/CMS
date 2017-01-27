@@ -5,6 +5,6 @@
 	$qry=$pdo->prepare($sql);
 	$qry->execute(array($id));
 		echo "<script language='javascript' type='text/javascript'>alert('Article supprimé!')</script>";
-		echo "<script language='javascript' type='text/javascript'>window.open('articlechange.php','_self')</script>";
+		echo "<script language='javascript' type='text/javascript'>window.open('article.change.php','_self')</script>";
 
-?>
+

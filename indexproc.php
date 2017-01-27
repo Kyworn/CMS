@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="shortcut icon" href="logo.png">
+    <link rel="shortcut icon" href="img/logo.png">
     <meta charset="utf-8">
     <link rel="stylesheet" href="index.css" media="screen" title="no title">
     <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">

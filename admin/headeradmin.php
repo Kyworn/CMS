@@ -17,18 +17,18 @@ if(isset($_SESSION['pseudo']))  {
   if($_SESSION['status']  == 'Administrateur'){
     echo ' <nav>
 <div style="background-color:black;" class="nav-wrapper">
-  <a href="admin.php" class="brand-logo">'; echo $blogname; echo'</a>
+  <a href="admin.php" class="brand-logo">'; echo $blogname; echo '</a>
   <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
   <ul class="right hide-on-med-and-down">
     <li><a href="../index.php">Accueil</a></li>
     <li><a href="admin.php">Page d&apos;administration</a></li>
-    <li><a href="newpost.php">Ajouter un Post</a></li>
+    <li><a href="article.create.php">Ajouter un Post</a></li>
     <li><a href="../formulaire/logout.php">Déconnexion</a></li>
   </ul>
   <ul class="side-nav" id="mobile-demo">
   <li><a href="../index.php">Accueil</a></li>
   <li><a href="admin.php">Admin Pannel</a></li>
-  <li><a href="newpost.php">Ajouter un Post</a></li>
+  <li><a href="article.create.php">Ajouter un Post</a></li>
   <li><a href="../formulaire/logout.php">Déconnexion</a></li>
   </ul>
 </div>

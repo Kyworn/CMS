@@ -1,14 +1,13 @@
  <?php
- include 'blog/BlogDbLoad.php';
- include 'blog/Author.blog.php';
- include 'blog/Article.php';
- include 'blog/blog.php';
+ spl_autoload_register(function($classname){
+     require_once "ArticleIndex/".$classname.".php";
+ });
  session_start();
  ?>
  <!DOCTYPE html>
  <html>
    <head>
-     <link rel="shortcut icon" href="logo.png">
+     <link rel="shortcut icon" href="img/logo.png">
      <meta charset="utf-8">
      <link rel="stylesheet" href="index.css" media="screen" title="no title">
      <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
@@ -20,7 +19,15 @@
        <?php include  'headerindex.php';
        include 'info.php';?>
    <div class="contenu">
-     <?= isset($_GET['articleId']) ? $blog->displayArticle($_GET['articleId']) : $blog->displayArticleList(); ?>
+       <?php
+       $articlesLoad = new ArticleDBLoad('localhost','blogname','root','');
+       $articles = $articlesLoad->loadArticle('articles');
+       $commentsLoad = new CommentDBLoad('localhost','blogname','root','');
+       $comments = $commentsLoad->loadComment('comments');
+       $blog = new Blog($articles, $comments);
+       ?>
+     <?= isset($_GET['articleId']) ? $blog->afficheArticle($_GET['articleId']) : $blog->afficheArticleList(); ?>
+     <?= isset($_GET['commentIdb']) ? $blog->afficheComment($_GET['commentIdb']) : $blog->afficheCommentList();?>
      </div>
  <br>
  <br>

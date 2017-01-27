@@ -13,7 +13,7 @@
     include 'headerindex.php';
     include 'connectsql/pdoconnect.php';
     $search = $_POST['search'];
-    $query = $pdo->prepare("SELECT * FROM posts WHERE content AND title OR  pseudo LIKE '%$search%'  LIMIT 0 , 10");
+    $query = $pdo->prepare("SELECT * FROM posts WHERE pseudo AND title OR  content LIKE '%$search%'  LIMIT 0 , 10");
     $query->bindValue(1, "%$search%", PDO::PARAM_STR);
     $query->execute();
              if (!$query->rowCount() == 0) {

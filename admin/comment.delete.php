@@ -5,5 +5,5 @@
 	$qry=$pdo->prepare($sql);
 	$qry->execute(array($id));
 		echo "<script language='javascript' type='text/javascript'>alert('Commentaire supprimé!')</script>";
-		echo "<script language='javascript' type='text/javascript'>window.open('commentchange.php','_self')</script>";
-?>
+		echo "<script language='javascript' type='text/javascript'>window.open('comment.change.php','_self')</script>";
+

@@ -21,8 +21,8 @@
         {
           echo "<tr><td>".$donnees['username']."</td>";
           echo "<td>".$donnees['status']."</td>";
-          echo "<td><a href='edituser.php?id=".$donnees['uid']."'>Editer</a></td>";
-          echo "<td><a href='deleteuser.php?id=".$donnees['uid']."'>x</a></td><tr>";
+          echo "<td><a href='user.edit.php?id=".$donnees['uid']."'>Editer</a></td>";
+          echo "<td><a href='user.delete.php?id=".$donnees['uid']."'>x</a></td><tr>";
 ?>
 <?php
 }
@@ -36,8 +36,6 @@ catch(Exception $e)
 
 
 ?>
-</ol>
-</table>
 </div>
   </body>
 </html>

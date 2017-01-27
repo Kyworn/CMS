@@ -5,9 +5,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 35em;
-  margin: 0px auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 5% auto;
 }
 footer {
   position: absolute;

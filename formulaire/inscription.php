@@ -30,12 +30,7 @@ include '../connectsql/pdoconnect.php';
         $.ajax({
           type : 'POST',
           url  : 'username-check.php',
-          data : $(this).serialize(),
-          success : function(data)
-          {
-            $("#result").html(data);
-          }
-        });
+          data : $(this).serialize()});
         return false;
       }
       else
@@ -57,7 +52,7 @@ include '../connectsql/pdoconnect.php';
       <form action="insertUsers.php" method="post">
           <div class="row">
               <div class="input-field col s6">
-                <span id="result" </br></span>
+                <span id="result"></span> <br>
                   <input type="text" name="name" id="name" placeholder="Pseudo" />
                    Pseudo : <input type="text" name="username" placeholder="Username" required="required" /> Mot de passe :
                   <input type="password" name="password" required="required" />

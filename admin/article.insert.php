@@ -12,4 +12,4 @@ else{
 }
 }
 header( "Refresh:3; url=admin.php", true, 303);
-?>
+

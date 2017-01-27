@@ -13,4 +13,4 @@ else{
 echo "Les donnés n'ont pas été ajoutés.";
 }
 }
-?>
+

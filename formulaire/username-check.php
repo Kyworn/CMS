@@ -17,4 +17,3 @@
 		  echo "<span style='color:green;'>Disponnible</span>";
 	  }
   }
-?>

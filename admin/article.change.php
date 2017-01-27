@@ -22,8 +22,8 @@
           echo "<tr><td>".$donnees['title']."</br></td>";
           echo "<td>".$donnees['content']."</td>";
           echo "<td>".$donnees['timedate']."</td>";
-  //        echo "<td><a href='.php?id=".$donnees['id']."'>Editer</a></td>";
-          echo "<td><a href='deletearticle.php?id=".$donnees['id']."'>x</a></td><tr>";
+            echo "<td><a href='article.edit.php?id=".$donnees['id']."'>Editer</a></td>";
+            echo "<td><a href='article.delete.php?id=".$donnees['id']."'>x</a></td><tr>";
 ?>
 <?php
 }
@@ -35,8 +35,6 @@ catch(Exception $e)
     die('Erreur : '.$e->getMessage());
 }
 ?>
-</ol>
-</table>
 </div>
   </body>
 </html>
