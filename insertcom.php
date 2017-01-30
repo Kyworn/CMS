@@ -2,7 +2,7 @@
 if(isset($_POST["submit"])){
 include 'connectsql/pdoconnect.php';
 
-$sql =   "INSERT INTO commentaires (idb, auteur, commentaire)
+$sql =   "INSERT INTO commentaire (idb, auteur, commentaire)
 VALUES ('".$_GET['article']."','".$_SESSION["pseudo"]."','".$_POST["commentaire"]."')";
 if ($pdo->query($sql)) {
   echo "<script language='javascript' type='text/javascript'>alert('Commentaire Ajouté!')</script>";

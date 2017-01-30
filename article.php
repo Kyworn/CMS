@@ -50,7 +50,7 @@ $donnees = $reponse->fetch();
 
 <?php
 $reponse->closeCursor();
-$reponse = $pdo->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %H:%i\') AS date_commentaire_fr FROM commentaires WHERE idb = ? ORDER BY date_commentaire');
+$reponse = $pdo->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %H:%i\') AS date_commentaire_fr FROM commentaire WHERE idb = ? ORDER BY date_commentaire');
 $reponse->execute(array($_GET['article']));
 
 while ($donnees = $reponse->fetch())

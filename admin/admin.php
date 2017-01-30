@@ -21,7 +21,7 @@
     $sUsers = "SELECT * FROM users";
     $rReseultUsers = $pdo->query($sUsers)->fetchAll();
 
-    $sComment = "SELECT * FROM commentaires";
+    $sComment = "SELECT * FROM commentaire";
     $rReseultComment = $pdo->query($sComment)->fetchAll();
 
     session_start();
